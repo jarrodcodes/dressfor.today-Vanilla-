@@ -1,26 +1,23 @@
-const url2 = 'http://ip-api.com/json/';
-const ipFunction = fetch(url2)
-.then(function (resp) {
-       return resp.json()
-    }
-).then(function(data) {
+let url2 = 'http://www.ip-api.com/json/';
 
+let ipFunction = fetch(url2)
+.then(function (resp) {
+return resp.json()
+}
+).then(function(data) {
 console.log(data.city)
 return data.city;
-}
-)
+})
 
-const ipFunction2 = ipFunction
-.then(function(resp) {
-    console.log(resp)
-    return resp
- }
- 
-)
-
-Promise.resolve(ipFunction2)
-
+Promise.resolve(ipFunction)
 .then(function (answer) {
-    console.log(answer)
+console.log(answer)
+})
 
+fetch('http://www.ip-api.com/json/').then(function (result) {
+return result.json()
+})
+.then(function(result) {
+console.log(result.city)
+let city = result.city
 })
