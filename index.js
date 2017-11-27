@@ -21,3 +21,16 @@ return result.json()
 console.log(result.city)
 let city = result.city
 })
+
+let data = [];
+
+fetch('http://www.ip-api.com/json/')
+  .then(function (result) {
+    return result.json()
+  })
+  .then(function(result) {
+    console.log(result.city)
+    data.push(result.city)
+  });
+
+console.log(data);
